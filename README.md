@@ -1,7 +1,7 @@
 <!--
-  Title: Reactivate Cold Leads: AI Voice Agent for Automated Sales Outreach
+  Title: LeadReviveAI: AI Voice Agent for Automated Sales Outreach
   Description: Boost revenue and improve your sales pipeline. Use AI Voice Agent to automatically re-engages inactive leads with personalized calls and updates your CRM.
-  Author: Aymen
+  Author: Anurag Raut
   Keywords: How to reactivate cold leads with AI, AI voice agent, lead reactivation, lead generation, VAPI platform, Retell AI, CRM automation, automated follow-up calls, GPT-4o, Twilio integration, OpenAI Realtime API, Airtable
 -->
 
@@ -192,4 +192,4 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 
 ## Contact
 
-For questions or suggestions, contact me at `aymenMir1001@gmail.com`.
+For questions or suggestions, contact me at `anuragtraut2003@gmail.com`.
