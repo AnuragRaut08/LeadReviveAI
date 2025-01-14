@@ -5,7 +5,7 @@
   Keywords: How to reactivate cold leads with AI, AI voice agent, lead reactivation, lead generation, VAPI platform, Retell AI, CRM automation, automated follow-up calls, GPT-4o, Twilio integration, OpenAI Realtime API, Airtable
 -->
 
-# AI Voice Agent for Leads Reactivation  
+# LeadReviveAI:AI Voice Agent for Leads Reactivation  
 
 This project automates the process of reactivating **inactive leads** using an **AI voice agent**. The system targets business **warm leads/prospects** who previously showed interest but didn't convert—to help generate **additional revenue**. Instead of relying on less effective email campaigns, the **AI voice agent** makes **personalized follow-up calls** to **re-engage leads**, **qualify them**, or gather intent for the sales team. This approach is ideal for businesses with **large lead databases** and **low conversion rates**.
 
