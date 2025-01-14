@@ -94,8 +94,8 @@ For this project, I used **VAPI** for the voice agent’s development, but, the 
 1. **Clone the repository:**  
 
    ```sh  
-   git clone https://github.com/kaymen99/leads-reactivation-with-AI-Voice-Agent.git  
-   cd leads-reactivation-with-AI-Voice-Agent  
+   git clone https://github.com/AnuragRaut08/LeadReviveAI.git
+   cd LeadReviveAI
    ```  
 
 2. **Set up a virtual environment and install dependencies:**  
@@ -186,7 +186,7 @@ If you want to integrate another CRM or customize the behavior of the automation
 
 ---
 
-## Contributing
+## Contributions
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or features you’d like to see.
 
