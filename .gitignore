@@ -1,0 +1,33 @@
+# Ignore environment variables and credentials
+.env
+.env.local
+.env.production
+.env.test
+
+# Ignore virtual environment
+venv/
+.VENV/
+ENV/
+env/
+*.venv
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore log files
+logs/
+*.log
+
+# Ignore IDE and OS-specific files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Ignore build and dependency files
+node_modules/
+dist/
+build/
