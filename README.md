@@ -44,6 +44,12 @@ This project offers a powerful solution: an **AI voice agent** that automaticall
 4.  **Lead Qualification and CRM Update**
     Once the **end-call report** is received, the system triggers a **post-call analysis** function. This function leverages an **AI agent** (using GPT-4o or alternatives) to analyze the transcript, determine the lead's level of interest, and generate **actionable notes** for the sales team. Finally, the **CRM is updated** with all relevant call details, including the lead's status.
 
+
+## UI Dashboard
+
+![image](https://github.com/user-attachments/assets/e0c18a12-8786-4123-bf7e-54049e69d391)
+
+
 ## AI Voice Agent Frameworks  
 
 Several frameworks are available for building voice agents, and this repository includes the necessary code for the most popular options: **VAPI**, **Retell AI**, and **OpenAI’s Real-Time API** (not fully implemented yet).  
