@@ -62,7 +62,12 @@ For this project, I used **VAPI** for the voice agent’s development, but, the 
 - **Airtable CRM**: Connects to your Airtable contacts database. [Sign up](https://www.airtable.com/) and create a contacts database with the required fields.  
 - **HubSpot CRM**: Integrates with HubSpot for managing your leads. Sign up for a [HubSpot account](https://www.hubspot.com/), create a private app, and obtain an API key. [Follow this tutorial](https://www.youtube.com/watch?v=hSipSbiwc2s) for help.  
 - **Google APIs**: Used for accessing **Google Calendar** and **Google Sheets** (only when these are selected as CRM sources).  
-- **Google Search Automation**: Utilizes the **Serper API** for web searches. [Get your API key here](https://serper.dev).  
+- **Google Search Automation**: Utilizes the **Serper API** for web searches. [Get your API key here](https://serper.dev).
+- 
+- You can test the endpoints via:
+- **FastAPI Interactive Docs:** [http://localhost:8000/docs](http://localhost:8000/docs)
+- **ReDoc API Docs:** [http://localhost:8000/redoc](http://localhost:8000/redoc)
+- **Postman or cURL**
 
 ---
 
@@ -191,11 +196,19 @@ If you want to integrate another CRM or customize the behavior of the automation
 - **Customizing Prompts**: Update the prompts used for AI voice agent and the post call analysis (all pormpts are in `src/prompts.py`).
 
 ---
+## Contributing
+We welcome contributions!  
+To contribute:
+1. Fork the repository.
+2. Create a new feature branch:  
+   ```sh
+   git checkout -b feature-new-improvement
+   ```
+3. Make your changes & run tests.
+4. Submit a pull request!
 
-## Contributions
+---
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or features you’d like to see.
-
-## Contact
-
+## Contact  
 For questions or suggestions, contact me at `anuragtraut2003@gmail.com`.
+
