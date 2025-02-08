@@ -4,9 +4,11 @@ import uvicorn
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
+from dotenv import load_dotenv
 from src.base.leads_loader.airtable import AirtableLeadLoader
 from src.vapi_automation import VapiAutomation
-from dotenv import load_dotenv
+from src.groclake.modellake import analyze_sentiment
+from src.utils.logger import setup_logger
 
 # Load .env file
 load_dotenv()
@@ -23,6 +25,9 @@ app.add_middleware(
     expose_headers=["*"],
 )
 
+# Initialize logger
+logger = setup_logger('LeadReviveAI', 'leadreviveai.log')
+
 # Initialize leads loader (Airtable, Sheets, Hubspot or add your own custom CRM)
 lead_loader = AirtableLeadLoader(
     access_token=os.getenv("AIRTABLE_ACCESS_TOKEN"),
@@ -37,42 +42,32 @@ automation = VapiAutomation(lead_loader)
 async def redirect_root_to_docs():
     return RedirectResponse("/docs")
 
-
 @app.post("/execute")
 async def execute(payload: dict):
     """
     Trigger the lead processing workflow. Payload should contain list of lead IDs.
     """
     try:
-        # Fetch leads based on provided IDs
         lead_ids = payload.get("lead_ids", [])
-        
-        print("Fetching lead data...")
+        logger.info("Fetching lead data...")
         leads = automation.load_leads(lead_ids=lead_ids)
         if not leads:
             return {"message": "No leads found."}
-        
+
         for lead in leads:
-            # Augment the lead data (web research, linkedIn profile,...) 
             automation.pre_call_processing(lead)
-            
-            # Structure the required call parameters in Vapi format
             call_params = automation.get_call_input_params(lead)
-            print("Call Inputs:\n", call_params)
-            
-            # Initiate the call
-            print(f"Calling Lead {lead.id}...")
+            logger.info(f"Call Inputs:\n {call_params}")
+            logger.info(f"Calling Lead {lead.id}...")
             output = await automation.make_call(call_params)
-            
-            # await 1s
             time.sleep(1)
 
         return {"message": "Calls initiated successfully for all leads."}
-
     except ValueError as e:
+        logger.error(f"ValueError: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        print(e)
+        logger.error(f"Exception: {str(e)}")
         raise HTTPException(status_code=500, detail="An error occurred while executing the workflow")
 
 @app.post("/webhook")
@@ -84,9 +79,27 @@ async def handle_webhook(request: Request):
         response = await automation.handle_webhook_call(request)
         return response
     except Exception as e:
-        print("Error processing webhook:", str(e))
+        logger.error(f"Error processing webhook: {str(e)}")
         raise HTTPException(status_code=400, detail="Invalid webhook payload")
 
+@app.post("/analyze_sentiment")
+async def analyze_text_sentiment(payload: dict):
+    """
+    Analyze sentiment of a given text.
+    """
+    try:
+        text = payload.get("text", "")
+        if not text:
+            raise ValueError("Text input is required")
+        sentiment_score, sentiment_label = analyze_sentiment(text)
+        logger.info(f"Sentiment: {sentiment_label} (Score: {sentiment_score})")
+        return {"sentiment": sentiment_label, "score": sentiment_score}
+    except ValueError as e:
+        logger.error(f"ValueError: {str(e)}")
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        logger.error(f"Exception: {str(e)}")
+        raise HTTPException(status_code=500, detail="An error occurred while analyzing sentiment")
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
