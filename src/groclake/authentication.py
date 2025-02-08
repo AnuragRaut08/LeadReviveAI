@@ -1,12 +1,11 @@
-import os
 import groclake
+from src.config import GROCLAKE_API_KEY
 
 def authenticate():
     """
-    Authenticate with the Groclake API using the provided API key.
+    Authenticate with the Groclake API.
     Returns a Groclake client instance.
     """
-    api_key = os.getenv("GROCLAKE_API_KEY")
-    if not api_key:
+    if not GROCLAKE_API_KEY:
         raise ValueError("GROCLAKE_API_KEY environment variable not set.")
-    return groclake.Client(api_key=api_key)
+    return groclake.Client(api_key=GROCLAKE_API_KEY)
