@@ -87,7 +87,9 @@ For this project, I used **VAPI** for the voice agent’s development, but, the 
 - Python 3.9+  
 - Account and API key for **Vapi** 
 - OpenAI API key (or alternative LLMs like Claude or Groq)  
-- Twilio phone number  
+- Twilio phone number
+- PostgreSQL or MongoDB (based on project setup)
+- Redis (if using for caching)
 - Google API credentials (for Google Calendar or sheets when used as leads database).
 - Integration keys for CRM tools (Airtable, HubSpot) and other services (e.g., Serper API). 
 - NGROK installed 
@@ -185,6 +187,14 @@ To test the setup, you can simulate a call to your own phone number:
 After the call, check the CRM for updates or view the call logs directly in the VAPI dashboard.  
 
 ---
+
+### API Endpoints (Example)
+
+POST /api/leads/ - Add a new lead
+
+GET /api/leads/ - Get all leads
+
+POST /api/call/ - Initiate AI voice call
 
 ### Customizing the Automation
 
