@@ -98,7 +98,7 @@ For this project, I used **VAPI** for the voice agent’s development, but, the 
 - Redis (if using for caching)
 - Google API credentials (for Google Calendar or sheets when used as leads database).
 - Integration keys for CRM tools (Airtable, HubSpot) and other services (e.g., Serper API). 
-- NGROK installed 
+- ngrok installed 
 
 ---
 
