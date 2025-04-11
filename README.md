@@ -13,7 +13,7 @@ This project automates the process of reactivating **inactive leads** using an *
 
 ## The Problem: Cold Leads and Missed Opportunities
 
-Many businesses have a large database of **warm leads** - people who showed interest in the past but didn't buy. Maybe they filled out a form, attended a webinar, or even started a trial.  These are potential customers, but they often go cold and are forgotten.  Reaching out to them with emails often doesn't work well, and manually calling each one is time-consuming and expensive. This means **lost revenue** and **missed opportunities** to grow your business.
+Many businesses have a large database of **warm leads** - people who showed interest in the past but didn't buy. Maybe they filled out a form, attended a webinar, or even started a trial.  These are potential customers/quality leads, but they often go cold and are forgotten.  Reaching out to them with emails often doesn't work well, and manually calling each one is time-consuming and expensive. This means **lost revenue** and **missed opportunities** to grow your business.
 
 ## The Solution: AI Voice Agent for Lead Reactivation
 
