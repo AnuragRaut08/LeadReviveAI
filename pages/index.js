@@ -4,6 +4,7 @@ export default function Home() {
   const [lead, setLead] = useState("");
   const [status, setStatus] = useState("");
 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Processing...");
