@@ -32,7 +32,7 @@ export default function Home() {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Enter lead phone number"
+          placeholder="Enter lead contact number"
           value={lead}
           onChange={(e) => setLead(e.target.value)}
           required
