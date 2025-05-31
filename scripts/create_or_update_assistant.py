@@ -61,7 +61,6 @@ vapi_client = VapiAI()
 # # Get the assistant id, copy it to .env
 # print(output["id"])
 
-
 # Update an existing assistant with the above config
 assistant_id = "ed9dc040-735c-4c0f-89d8-e926e4eac54c"
 output = vapi_client.update_agent(assistant_id, assistant_config)
