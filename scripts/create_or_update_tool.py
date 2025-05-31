@@ -49,6 +49,7 @@ vapi_client = VapiAI()
 # output = vapi_client.create_tool(tool_config)
 # print(output)
 
+
 # # Get the tool id, necessary for creating/updating assistant
 # print(output["id"])
 
