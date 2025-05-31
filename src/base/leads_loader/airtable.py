@@ -21,6 +21,7 @@ class AirtableLeadLoader(LeadLoaderBase):
                     lead = {"id": record["id"], **record.get("fields", {})}
                     leads.append(lead)
             return leads
+            
         else:
             # Fetch leads by status filter (based on "Status" field)
             # You can choose your own field for filter with different naming
