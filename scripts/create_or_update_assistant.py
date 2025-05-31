@@ -54,6 +54,7 @@ assistant_config = {
 
 vapi_client = VapiAI()
 
+
 # Create a new assistant using the above config
 # output = vapi_client.create_agent(assistant_config)
 # print(output)
