@@ -7,7 +7,6 @@ load_dotenv()
 
 # Before creating your assistant, you must first create the needed tools
 # Copy their ids(str) in the list below.
-
 # If your assistant does not require any tool, leave empty
 tool_ids_list = ["4befe734-cca9-44af-895a-8b2a0aa4f731"]
 
