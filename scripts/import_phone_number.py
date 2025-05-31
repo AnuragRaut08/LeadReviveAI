@@ -13,7 +13,6 @@ twilio_number_config = {
     "twilioAuthToken": os.getenv("TWILIO_AUTH_TOKEN")
 }
 
-
 # Import your Twilio phone number to Vapi
 vapi_client = VapiAI()
 output = vapi_client.add_phone_number(twilio_number_config)
